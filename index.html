@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tuned — Every gig worth your time, one email a week</title>
 <meta name="description" content="Tuned finds the opportunities scattered across the internet — gigs, freelance work, jobs — and brings you one tailored email a week. Never the same one twice.">
+<meta name="theme-color" content="#faf6ef">
+<meta name="color-scheme" content="light">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tuned — Every gig worth your time, one email a week">
+<meta property="og:description" content="Tuned finds the opportunities scattered across the internet — gigs, freelance work, jobs — and brings you one tailored email a week. Never the same one twice.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d6e5d'/%3E%3Cg stroke='%23faf6ef' stroke-width='2.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M7 16h3l2.5-6 4 12 2.5-6h6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +26,8 @@
     --accent: #0d6e5d;
     --accent-deep: #0a5647;
     --accent-soft: rgba(13, 110, 93, 0.09);
+    --amber: #96562a;
+    --amber-soft: rgba(176, 106, 53, 0.14);
     --line: #e7ddcd;
     --line-soft: #efe7d9;
     --shadow: 0 1px 2px rgba(28,26,23,.04), 0 12px 30px -12px rgba(28,26,23,.14);
@@ -34,7 +41,7 @@
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; color-scheme: light; interpolate-size: allow-keywords; }
   body {
     margin: 0;
     background: var(--paper);
@@ -61,10 +68,12 @@
     margin: 0 0 20px;
     color: var(--ink);
     font-optical-sizing: auto;
+    text-wrap: balance;
   }
   h2 { font-size: clamp(2rem, 4.4vw, 3rem); }
   h3 { font-size: 1.35rem; letter-spacing: -0.01em; }
-  p { color: var(--ink-soft); margin: 0 0 18px; }
+  p { color: var(--ink-soft); margin: 0 0 18px; text-wrap: pretty; }
+  li { text-wrap: pretty; }
   p:last-child { margin-bottom: 0; }
   .lede { font-size: 1.22rem; line-height: 1.55; color: var(--ink-soft); }
   strong { font-weight: 600; color: var(--ink); }
@@ -85,7 +94,6 @@
   }
 
   .band { background: var(--paper-2); }
-  .band + .band { border-top: 1px solid var(--line-soft); }
 
   /* Buttons */
   .cta-btn {
@@ -102,6 +110,7 @@
     transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
   }
   .cta-btn:hover { background: var(--accent-deep); transform: translateY(-2px); box-shadow: 0 16px 30px -12px rgba(13,110,93,.75); }
+  .cta-btn:active { transform: translateY(0); box-shadow: 0 5px 12px -6px rgba(13,110,93,.6); transition-duration: .08s; }
   .cta-btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
   .cta-btn .arrow { transition: transform .18s ease; }
   .cta-btn:hover .arrow { transform: translateX(3px); }
@@ -123,7 +132,11 @@
     padding: 7px 15px 7px 12px; border-radius: 999px; margin-bottom: 34px;
     box-shadow: var(--shadow);
   }
-  .hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+  .hero-tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); animation: pulse 2.8s ease-in-out infinite; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 3px var(--accent-soft); }
+    50% { box-shadow: 0 0 0 7px rgba(13,110,93,.04); }
+  }
   .hero h1 {
     font-size: clamp(2.7rem, 7vw, 5rem);
     font-weight: 600;
@@ -138,6 +151,7 @@
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     line-height: 1.5;
     color: var(--ink-soft);
+    text-wrap: balance;
   }
   .cta-note { margin-top: 18px; font-size: 0.88rem; color: var(--ink-faint); }
   .chips { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 52px; }
@@ -188,7 +202,11 @@
     transition: transform .2s ease, box-shadow .2s ease;
   }
   .value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-  .value-card .mk { width: 34px; height: 34px; margin-bottom: 18px; color: var(--accent); }
+  .value-card .mk {
+    width: 44px; height: 44px; padding: 10px;
+    background: var(--accent-soft); border-radius: 12px;
+    margin-bottom: 18px; color: var(--accent);
+  }
   .value-card h3 { font-size: 1.22rem; margin-bottom: 10px; }
   .value-card p { margin: 0; font-size: 0.98rem; }
 
@@ -196,10 +214,11 @@
   .ai-box {
     background: linear-gradient(160deg, var(--accent) 0%, var(--accent-deep) 100%);
     color: #fff;
+    border: 1px solid rgba(255,255,255,.16);
     border-radius: calc(var(--radius) + 6px);
     padding: clamp(36px, 5vw, 60px);
     margin-top: 48px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,.18);
     position: relative;
     overflow: hidden;
   }
@@ -246,6 +265,8 @@
     padding: 4px 11px;
     margin-bottom: 9px;
   }
+  .opp .tag.warm { color: var(--amber); background: var(--amber-soft); }
+  .opp .tag.plain { color: var(--ink-soft); background: rgba(28,26,23,.06); }
   .opp p { margin: 0; font-size: 0.94rem; color: var(--ink-soft); }
   .email-foot { margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--line); font-size: 0.82rem; color: var(--ink-faint); }
 
@@ -276,6 +297,7 @@
     letter-spacing: -0.015em;
     color: var(--ink);
     margin: 0 0 24px;
+    text-wrap: balance;
   }
   .testimonial cite { font-style: normal; font-size: 0.86rem; color: var(--ink-faint); font-family: var(--sans); }
 
@@ -293,6 +315,9 @@
     border: 1.5px solid var(--accent);
     box-shadow: var(--shadow-lg);
     position: relative;
+  }
+  @media (min-width: 681px) {
+    .price-card.featured { margin-top: -12px; margin-bottom: 12px; }
   }
   .price-card .badge {
     position: absolute; top: -13px; left: 34px;
@@ -333,7 +358,15 @@
   }
   .faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
   .faq summary:hover { color: var(--accent); }
+  .faq summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 8px; }
+  .faq details::details-content {
+    block-size: 0; overflow: hidden;
+    transition: block-size .32s cubic-bezier(.4,0,.2,1), content-visibility .32s allow-discrete;
+  }
+  .faq details[open]::details-content { block-size: auto; }
   .faq details p { padding: 0 44px 24px 0; margin: 0; font-size: 1rem; }
+  .faq details[open] p { animation: faqFade .4s ease both; }
+  @keyframes faqFade { from { opacity: 0; } to { opacity: 1; } }
 
   /* Final CTA */
   .final { text-align: center; }
@@ -349,13 +382,33 @@
   }
   footer .mark { font-family: var(--serif); font-weight: 600; color: var(--ink-soft); font-size: 1rem; letter-spacing: -0.01em; }
 
-  /* Reveal-on-scroll (progressive; no-JS shows everything) */
-  .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1); }
-  .js .reveal.in { opacity: 1; transform: none; }
+  /* Reveal-on-scroll (progressive; no-JS shows everything).
+     Runs as an animation, not a transition, so it never hijacks an element's own
+     hover/focus transitions (e.g. the value-card lift). */
+  .js .reveal { opacity: 0; }
+  .js .reveal.in { animation: rise .7s cubic-bezier(.16,.8,.3,1) both; }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  /* Gentle stagger for sibling cards/rows revealed together */
+  .js .steps .step:nth-child(2) { animation-delay: .08s; }
+  .js .steps .step:nth-child(3) { animation-delay: .16s; }
+  .js .grid2 .value-card:nth-child(2) { animation-delay: .07s; }
+  .js .grid2 .value-card:nth-child(3) { animation-delay: .14s; }
+  .js .grid2 .value-card:nth-child(4) { animation-delay: .21s; }
+  .js .qlist li:nth-child(2) { animation-delay: .05s; }
+  .js .qlist li:nth-child(3) { animation-delay: .10s; }
+  .js .qlist li:nth-child(4) { animation-delay: .15s; }
+  .js .qlist li:nth-child(5) { animation-delay: .20s; }
+  .js .qlist li:nth-child(6) { animation-delay: .25s; }
+  .js .pricing-grid .price-card:nth-child(2) { animation-delay: .08s; }
   @media (prefers-reduced-motion: reduce) {
-    .js .reveal { opacity: 1; transform: none; transition: none; }
+    .js .reveal { opacity: 1; }
+    .js .reveal.in { animation: none; }
     html { scroll-behavior: auto; }
-    .cta-btn, .value-card { transition: none; }
+    .cta-btn, .value-card, .faq details::details-content { transition: none; }
+    .hero-tag .dot, .faq details[open] p { animation: none; }
   }
 
   @media (max-width: 860px) {
@@ -485,11 +538,11 @@
           <p><strong>Session violinist — indie folk album, 3-day booking.</strong> Paid, Berlin, flexible dates in September. Matches your genre and your "worth traveling for" threshold.</p>
         </div>
         <div class="opp">
-          <span class="tag">Worth a look</span>
+          <span class="tag warm">Worth a look</span>
           <p><strong>Autumn Strings Festival — open call, emerging artists stage.</strong> Unpaid but travel-covered; you said prestige occasionally outweighs pay for the right stage. Flagged for you to judge.</p>
         </div>
         <div class="opp">
-          <span class="tag">New this week</span>
+          <span class="tag plain">New this week</span>
           <p><strong>Boutique hotel chain — background/ambient set, ongoing.</strong> Remote-adjacent, recurring booking, pay on inquiry.</p>
         </div>
         <p class="email-foot">This email was researched and written by Tuned's AI. As always — nothing here has been seen in a previous email.</p>
