@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d6e5d'/%3E%3Cg stroke='%23faf6ef' stroke-width='2.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M7 16h3l2.5-6 4 12 2.5-6h6'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
@@ -36,7 +36,7 @@
     --radius-sm: 12px;
     --maxw: 1040px;
     --measure: 720px;
-    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
     --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   }
 
@@ -63,8 +63,8 @@
   h1, h2, h3, h4 {
     font-family: var(--serif);
     font-weight: 600;
-    line-height: 1.08;
-    letter-spacing: -0.015em;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
     margin: 0 0 20px;
     color: var(--ink);
     font-optical-sizing: auto;
@@ -140,9 +140,9 @@
   .hero h1 {
     font-size: clamp(2.7rem, 7vw, 5rem);
     font-weight: 600;
-    max-width: 15ch;
+    max-width: 16ch;
     margin: 0 auto 26px;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.018em;
   }
   .hero h1 em { font-style: italic; color: var(--accent); font-weight: 500; }
   .hero .sub {
@@ -170,7 +170,7 @@
 
   /* Problem */
   .statement { font-size: clamp(1.35rem, 2.6vw, 1.7rem); line-height: 1.5; color: var(--ink); font-family: var(--serif); font-weight: 400; }
-  .statement .muted { color: var(--ink-faint); }
+  .statement .tail { font-style: italic; }
 
   /* Steps */
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; counter-reset: step; }
@@ -228,6 +228,8 @@
   }
   .ai-box .big { font-family: var(--serif); font-weight: 400; font-size: clamp(1.35rem, 2.6vw, 1.75rem); line-height: 1.45; color: #fff; margin: 0 0 20px; position: relative; }
   .ai-box .small { color: rgba(255,255,255,.82); font-size: 1.02rem; margin: 0; position: relative; }
+  .ai-box .small + .small { margin-top: 14px; }
+  .ai-box .small strong { color: #fff; font-weight: 600; }
 
   /* Sample email */
   .email-mock {
@@ -401,7 +403,6 @@
   .js .qlist li:nth-child(3) { animation-delay: .10s; }
   .js .qlist li:nth-child(4) { animation-delay: .15s; }
   .js .qlist li:nth-child(5) { animation-delay: .20s; }
-  .js .qlist li:nth-child(6) { animation-delay: .25s; }
   .js .pricing-grid .price-card:nth-child(2) { animation-delay: .08s; }
   @media (prefers-reduced-motion: reduce) {
     .js .reveal { opacity: 1; }
@@ -430,14 +431,14 @@
   <div class="wrap">
     <span class="hero-tag reveal"><span class="dot"></span> One email a week · built for scattered work</span>
     <h1 class="reveal">Every gig worth your time — <em>one email a week.</em></h1>
-    <p class="sub reveal">Your next opportunity is buried across a dozen sites you'll never have time to check. Tuned finds it, tunes out the noise, and brings it to you — so you can keep doing the work you actually love.</p>
+    <p class="sub reveal">Tell Tuned once what you're after: the work you want, the pay you need, the lines you won't cross. Every week after that, one email of opportunities that actually fit, found in the places you don't have time to check.</p>
     <div class="reveal">
       <a class="cta-btn" href="mailto:hello@example.com?subject=I%20want%20to%20get%20Tuned">Get Tuned <span class="arrow">→</span></a>
       <div class="cta-note">Takes 5 minutes to tell us what you're after. No card required to start the conversation.</div>
     </div>
     <div class="chips reveal">
+      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> Matched to what you told us</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v13a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/></svg> Weekly, not daily noise</span>
-      <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg> Personalized to you</span>
       <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Never repeated</span>
     </div>
   </div>
@@ -448,7 +449,7 @@
   <div class="wrap narrow">
     <span class="eyebrow reveal">The problem</span>
     <h2 class="reveal">You can't watch everything.</h2>
-    <p class="statement reveal">The best gigs, commissions, and roles for people who do scattered, project-based work aren't sitting on one platform — they're spread across festival call-outs, niche boards, cruise line postings, forwarded emails, and sites that don't even have an alert feature. Checking them all, every week, isn't a job you signed up for. <span class="muted">So most people check a few, miss the rest, and never know what they missed.</span></p>
+    <p class="statement reveal">The best gigs, commissions, and roles for people who do scattered, project-based work aren't sitting on one platform. They're spread across festival call-outs, residency lists, crew calls, commission boards, niche job pages, forwarded emails, and sites that don't even have an alert feature. Checking them all, every week, isn't a job you signed up for. <span class="tail">So most people check a few, and never know what they missed.</span></p>
   </div>
 </section>
 
@@ -461,11 +462,11 @@
       <div class="step reveal">
         <div class="num">1</div>
         <h3>Tell us what you're after</h3>
-        <p>A short conversation — what you want, what you'd never take, how far you'd travel, what "worth it" looks like to you.</p>
+        <p>A short conversation: what you want, what you'd never take, how far you'd travel, what "worth it" looks like to you.</p>
       </div>
       <div class="step reveal">
         <div class="num">2</div>
-        <h3>We keep a lookout — everywhere</h3>
+        <h3>We keep a lookout, everywhere</h3>
         <p>Every week, across the open web and the scattered sources your kind of work actually lives on.</p>
       </div>
       <div class="step reveal">
@@ -491,17 +492,17 @@
       <div class="value-card reveal">
         <svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h10M4 12h16M4 18h7"/><circle cx="18" cy="6" r="2.2"/><circle cx="15" cy="18" r="2.2"/></svg>
         <h3>Knows what you'd bend on</h3>
-        <p>Not a boolean filter. Tuned learns the difference between a dealbreaker and a preference — so a near-perfect match still reaches you, clearly flagged, instead of silently vanishing.</p>
+        <p>Not a boolean filter. Tuned learns the difference between a dealbreaker and a preference, so a near-perfect match still reaches you, clearly flagged, instead of silently vanishing.</p>
       </div>
       <div class="value-card reveal">
         <svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
         <h3>Gets sharper every month</h3>
-        <p>A short monthly check-in lets you adjust anything — tighten it, loosen it, change your mind. Month three is more tuned to you than month one.</p>
+        <p>A short monthly check-in lets you adjust anything: tighten it, loosen it, change your mind. Month three is more tuned to you than month one.</p>
       </div>
       <div class="value-card reveal">
         <svg class="mk" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg>
         <h3>Tuned with you, from day one</h3>
-        <p>Your first month is guided — we go through the first run and the first few weeks together, until the emails actually feel right.</p>
+        <p>Your first month is guided. We go through the first run and the first few weeks together, until the emails actually feel right.</p>
       </div>
     </div>
   </div>
@@ -511,10 +512,11 @@
 <section>
   <div class="wrap narrow">
     <span class="eyebrow reveal">Being upfront</span>
-    <h2 class="reveal">Let AI do the boring part.</h2>
+    <h2 class="reveal">Your craft stays yours.</h2>
     <div class="ai-box reveal">
-      <p class="big">Finding opportunities means combing endless listings — tedious work AI is genuinely good at, and you'd never enjoy. So that's all it does here: the hunting. Your craft stays yours.</p>
-      <p class="small">We're upfront that Tuned is AI-powered — every email says so. Not because we have to, but because being honest about it is how we stand behind what it sends you.</p>
+      <p class="big">Finding opportunities means combing endless listings, tedious work you'd never enjoy. So that is the only part we hand to AI: the hunting.</p>
+      <p class="small">We're upfront about it. Every email says plainly that the research was done by AI built for exactly this, because being honest about how it works is how we stand behind what it sends you.</p>
+      <p class="small">And there's a person here: <strong>Tuned is run by Mila</strong>, a real person who sets it up with you, tunes it with you, and reads every piece of your feedback.</p>
     </div>
   </div>
 </section>
@@ -524,7 +526,7 @@
   <div class="wrap narrow">
     <span class="eyebrow reveal">What it actually looks like</span>
     <h2 class="reveal">A sample week.</h2>
-    <p class="lede reveal">This is a fictional example, built to show the format — not a real client's inbox.</p>
+    <p class="lede reveal">This is a fictional example to show the format, not a real client's inbox.</p>
     <div class="email-mock reveal">
       <div class="email-chrome"><span class="tl"></span><span class="tl"></span><span class="tl"></span></div>
       <div class="email-head">
@@ -557,12 +559,11 @@
     <span class="eyebrow reveal">Getting to know you</span>
     <h2 class="reveal">The kind of questions we start with.</h2>
     <ul class="qlist">
-      <li class="reveal">What kind of work lights you up — and what kind drains you, even if it pays?</li>
+      <li class="reveal">What kind of work lights you up, and what kind drains you, even if it pays?</li>
       <li class="reveal">How far would you travel, and does exceptional pay or prestige change that answer?</li>
       <li class="reveal">Is there anything you'd turn down even if it looked perfect on paper?</li>
       <li class="reveal">Where have you found good opportunities before that we should prioritize?</li>
-      <li class="reveal">Are unpaid opportunities ever worth it to you — and when?</li>
-      <li class="reveal">How do you want your weekly email to sound — brisk and factual, or warm and encouraging?</li>
+      <li class="reveal">Are unpaid opportunities ever worth it to you, and when?</li>
     </ul>
   </div>
 </section>
@@ -572,7 +573,7 @@
   <div class="wrap">
     <div class="testimonial reveal">
       <span class="quotemark">&ldquo;</span>
-      <blockquote>I used to lose whole evenings scrolling festival call-outs. Now it's one email on Monday, and I've applied to two things before coffee.</blockquote>
+      <blockquote>I used to lose whole evenings scrolling open calls and crew lists. Now it's one email on Monday, and I've applied to two things before coffee.</blockquote>
       <cite>— illustrative example, based on how people describe using Tuned</cite>
     </div>
   </div>
@@ -608,7 +609,7 @@
         </ul>
       </div>
     </div>
-    <p class="guarantee">Every plan starts with a guided first month — we tune it with you until the emails feel right, before it's on autopilot.</p>
+    <p class="guarantee">Every plan starts with a guided first month. We tune it with you until the emails feel right.</p>
   </div>
 </section>
 
@@ -619,24 +620,28 @@
     <h2 class="reveal">Good to know.</h2>
     <div class="faq reveal">
       <details>
-        <summary>Is this only for musicians and artists?</summary>
-        <p>That's who it helps most — scattered, project-based work is exactly the mess Tuned is built to untangle. But it works for other kinds of work too. If you're not sure it fits yours, just ask.</p>
+        <summary>Who is Tuned for?</summary>
+        <p>People whose work arrives as scattered opportunities: musicians and performers, visual artists and designers, technicians and crew, freelancers, and everyone else working in and around culture. If your next thing gets posted somewhere you didn't think to look, Tuned is for you. It works for other kinds of work too, just ask.</p>
       </details>
       <details>
-        <summary>Is this really AI doing the research?</summary>
-        <p>Yes, openly. Every email says so. We think that's the right way to do this — the tedious searching is exactly the kind of work AI should be doing, and being upfront about it is how we take responsibility when it gets something wrong.</p>
+        <summary>Where does AI fit in?</summary>
+        <p>The weekly searching and compiling is done by AI we've built and tuned for this. It's what makes a personal research service possible at this price. The setup, the tuning, and the listening to your feedback is a person. Every email is upfront about which is which.</p>
       </details>
       <details>
         <summary>Which sites do you actually search?</summary>
-        <p>The open web, public listings, and RSS-style feeds — plus anything you forward us, like a platform's own alert emails. We don't log into gated platforms or scrape accounts; several explicitly disallow that, and we're not going to do it quietly.</p>
+        <p>The open web, public listings, and RSS-style feeds, plus anything you forward us, like a platform's own alert emails. We don't log into gated platforms or scrape accounts; several explicitly disallow that, and we're not going to do it quietly.</p>
       </details>
       <details>
         <summary>What if the first few emails aren't quite right?</summary>
-        <p>That's expected — it's why the first month is guided. Tell us what missed the mark and we adjust it with you, not just once, but every month after that too.</p>
+        <p>That's expected. It's why the first month is guided. Tell us what missed the mark and we adjust it with you, not just once, but every month after that too.</p>
       </details>
       <details>
         <summary>Can I stop anytime?</summary>
-        <p>Yes. Cancel whenever — no lock-in beyond whichever billing period you're in.</p>
+        <p>Yes. Cancel whenever. No lock-in beyond whichever billing period you're in.</p>
+      </details>
+      <details>
+        <summary>What happens after I reach out?</summary>
+        <p>A real person replies within a day or two, and you have a short conversation about what you're after. A CV helps but isn't required. Your first digest usually arrives within a week, and the guided first month starts from there.</p>
       </details>
     </div>
   </div>
@@ -654,7 +659,7 @@
 <footer>
   <div class="wrap">
     <p style="margin:0 0 6px;"><span class="mark">Tuned</span></p>
-    <p style="margin:0;">AI-researched, weekly, personalized. &copy; 2026.</p>
+    <p style="margin:0;">Weekly, personal, honest. &copy; 2026.</p>
   </div>
 </footer>
 
