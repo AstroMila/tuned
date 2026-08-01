@@ -30,9 +30,10 @@
     --amber-soft: rgba(176, 106, 53, 0.14);
     --line: #e7ddcd;
     --line-soft: #efe7d9;
-    /* Tight ambient blur reads crisper than a wide soft haze — edges stay defined. */
-    --shadow: 0 1px 2px rgba(28,26,23,.05), 0 6px 16px -6px rgba(28,26,23,.10);
-    --shadow-lg: 0 2px 5px rgba(28,26,23,.06), 0 20px 44px -18px rgba(28,26,23,.20);
+    /* Soft and diffuse on purpose: paper resting on paper. Tight, crisp shadows read
+       as the tech-product idiom and pull against this page's editorial identity. */
+    --shadow: 0 1px 2px rgba(28,26,23,.04), 0 12px 30px -12px rgba(28,26,23,.14);
+    --shadow-lg: 0 2px 4px rgba(28,26,23,.05), 0 30px 60px -20px rgba(28,26,23,.22);
     --radius: 18px;
     --radius-sm: 12px;
     --maxw: 1040px;
@@ -514,8 +515,41 @@
   </div>
 </section>
 
-<!-- 4. WHY IT'S DIFFERENT -->
+<!-- 4. SAMPLE EMAIL — sits right after the three steps so the product itself
+     answers "so what do I actually get?" before any further argument. -->
 <section class="band">
+  <div class="wrap narrow">
+    <span class="eyebrow reveal">What it actually looks like</span>
+    <h2 class="reveal">A sample week.</h2>
+    <p class="lede reveal">This is a fictional example to show the format, not a real client's inbox.</p>
+    <div class="email-mock reveal">
+      <div class="email-chrome"><span class="tl"></span><span class="tl"></span><span class="tl"></span></div>
+      <div class="email-head">
+        <div class="subj">Tuned — Your Week, Ready</div>
+        <div class="meta">To: nadia@example.com</div>
+      </div>
+      <div class="email-body">
+        <h4>Hi Nadia — here's what we found for you this week</h4>
+        <div class="opp">
+          <span class="tag">Strong match</span>
+          <p><strong>Session violinist — indie folk album, 3-day booking.</strong> Paid, Berlin, flexible dates in September. Matches your genre and your "worth traveling for" threshold.</p>
+        </div>
+        <div class="opp">
+          <span class="tag warm">Worth a look</span>
+          <p><strong>Autumn Strings Festival — open call, emerging artists stage.</strong> Unpaid but travel-covered; you said prestige occasionally outweighs pay for the right stage. Flagged for you to judge.</p>
+        </div>
+        <div class="opp">
+          <span class="tag plain">New this week</span>
+          <p><strong>Boutique hotel chain — background/ambient set, ongoing.</strong> Remote-adjacent, recurring booking, pay on inquiry.</p>
+        </div>
+        <p class="email-foot">This email was researched and written by Tuned's AI. As always — nothing here has been seen in a previous email.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WHY IT'S DIFFERENT -->
+<section>
   <div class="wrap">
     <span class="eyebrow reveal">Why it's different</span>
     <h2 class="reveal">Not another alert feed.</h2>
@@ -544,8 +578,8 @@
   </div>
 </section>
 
-<!-- 5. LET AI DO THE BORING PART -->
-<section>
+<!-- 6. LET AI DO THE BORING PART -->
+<section class="band">
   <div class="wrap narrow">
     <span class="eyebrow reveal">Being upfront</span>
     <h2 class="reveal">Your craft stays yours.</h2>
@@ -553,38 +587,6 @@
       <p class="big">Finding opportunities means combing endless listings, tedious work you'd never enjoy. So that is the only part we hand to AI: the hunting.</p>
       <p class="small">We're upfront about it. Every email says plainly that the research was done by AI built for exactly this, because being honest about how it works is how we stand behind what it sends you.</p>
       <p class="small">And there are people here: <strong>Tuned is run by Shanna and Mila</strong>, real people who set it up with you, tune it with you, and read every piece of your feedback.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 6. SAMPLE EMAIL -->
-<section class="band">
-  <div class="wrap narrow">
-    <span class="eyebrow reveal">What it actually looks like</span>
-    <h2 class="reveal">A sample week.</h2>
-    <p class="lede reveal">This is a fictional example to show the format, not a real client's inbox.</p>
-    <div class="email-mock reveal">
-      <div class="email-chrome"><span class="tl"></span><span class="tl"></span><span class="tl"></span></div>
-      <div class="email-head">
-        <div class="subj">Tuned — Your Week, Ready</div>
-        <div class="meta">To: nadia@example.com</div>
-      </div>
-      <div class="email-body">
-        <h4>Hi Nadia — here's what we found for you this week</h4>
-        <div class="opp">
-          <span class="tag">Strong match</span>
-          <p><strong>Session violinist — indie folk album, 3-day booking.</strong> Paid, Berlin, flexible dates in September. Matches your genre and your "worth traveling for" threshold.</p>
-        </div>
-        <div class="opp">
-          <span class="tag warm">Worth a look</span>
-          <p><strong>Autumn Strings Festival — open call, emerging artists stage.</strong> Unpaid but travel-covered; you said prestige occasionally outweighs pay for the right stage. Flagged for you to judge.</p>
-        </div>
-        <div class="opp">
-          <span class="tag plain">New this week</span>
-          <p><strong>Boutique hotel chain — background/ambient set, ongoing.</strong> Remote-adjacent, recurring booking, pay on inquiry.</p>
-        </div>
-        <p class="email-foot">This email was researched and written by Tuned's AI. As always — nothing here has been seen in a previous email.</p>
-      </div>
     </div>
   </div>
 </section>
